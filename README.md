@@ -13,26 +13,16 @@ This project is a C-based student management system designed to handle student r
 sequenceDiagram
     participant U as User
     participant M as Main Program
-    participant S as Student Database
 
     U->>M: Start program
-    loop Input Students Loop
-        M->>U: Request student details (name and grades)
+    loop Enter Student Details
+        M->>U: Request student details (name and 4 grades)
         U->>M: Provide name and grades
-        M->>S: Create/Add student in database
     end
-    M->>U: Request student number to view details
+    M->>U: Request student number to display
     U->>M: Provide student number
-    M->>S: Retrieve student details from database
-    S-->>M: Return student details
     M->>U: Display student details
-    U->>M: Choose to add another student or exit
-    alt Add Another Student
-        U->>M: Add another student
-    else Exit
-        U->>M: Exit program
-        M->>U: End program
-    end
+    M->>U: End program
 ```
 
 ## How to Use
