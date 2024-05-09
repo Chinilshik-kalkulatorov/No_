@@ -9,21 +9,21 @@ This project is a C-based student management system designed to handle student r
 - **Dynamic Expansion**: The number of students is not limited by a fixed array thanks to the use of dynamic memory allocation.
 
 ## Algorithm
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant M as Main Program
-
-    U->>M: Start program
-    loop Enter Student Details
-        M->>U: Request student details (name and 4 grades)
-        U->>M: Provide name and grades
-    end
-    M->>U: Request student number to display
-    U->>M: Provide student number
-    M->>U: Display student details
-    M->>U: End program
-```
+ ```mermaid
+ sequenceDiagram
+     participant U as User
+     participant M as Main
+     participant S as Student
+     U->>M: Start program
+     loop Input Loop
+         M->>U: Request student details
+         U->>M: Provide name and grades
+         M->>S: Create/Add student
+     end
+     M->>U: Request student number to display
+     U->>M: Provide student number
+     M->>S: Retrieve student details
+ ```
 
 ## How to Use
 1. **Compile the program**:
