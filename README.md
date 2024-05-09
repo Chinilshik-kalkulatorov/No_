@@ -12,17 +12,27 @@ This project is a C-based student management system designed to handle student r
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant M as Main
-    participant S as Student
+    participant M as Main Program
+    participant S as Student Database
+
     U->>M: Start program
-    loop Input Loop
-        M->>U: Request student details
+    loop Input Students Loop
+        M->>U: Request student details (name and grades)
         U->>M: Provide name and grades
-        M->>S: Create/Add student
+        M->>S: Create/Add student in database
     end
-    M->>U: Request student number to display
+    M->>U: Request student number to view details
     U->>M: Provide student number
-    M->>S: Retrieve student details
+    M->>S: Retrieve student details from database
+    S-->>M: Return student details
+    M->>U: Display student details
+    U->>M: Choose to add another student or exit
+    alt Add Another Student
+        U->>M: Add another student
+    else Exit
+        U->>M: Exit program
+        M->>U: End program
+    end
 ```
 
 ## How to Use
