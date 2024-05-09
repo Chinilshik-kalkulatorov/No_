@@ -1,4 +1,4 @@
-# Student Management System
+a# Student Management System
 
 ## Description
 This project is a C-based student management system designed to handle student records including names and grades. It allows users to add student information and then display this information based on user input.
@@ -7,6 +7,23 @@ This project is a C-based student management system designed to handle student r
 - **Adding Students**: Users can input details of students including names and grades for various modules.
 - **Displaying Student Information**: Allows users to select a student by number and view their details.
 - **Dynamic Expansion**: The number of students is not limited by a fixed array thanks to the use of dynamic memory allocation.
+
+## Algorithm
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant M as Main
+    participant S as Student
+    U->>M: Start program
+    loop Input Loop
+        M->>U: Request student details
+        U->>M: Provide name and grades
+        M->>S: Create/Add student
+    end
+    M->>U: Request student number to display
+    U->>M: Provide student number
+    M->>S: Retrieve student details
+```
 
 ## How to Use
 1. **Compile the program**:
