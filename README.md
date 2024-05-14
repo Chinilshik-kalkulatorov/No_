@@ -1,4 +1,4 @@
-a# Student Management System
+# Student Management System
 
 ## Description
 This project is a C-based student management system designed to handle student records including names and grades. It allows users to add student information and then display this information based on user input.
